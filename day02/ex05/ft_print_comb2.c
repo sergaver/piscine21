@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swoman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/31 16:01:02 by swoman            #+#    #+#             */
-/*   Updated: 2019/01/31 21:58:17 by swoman           ###   ########.fr       */
+/*   Created: 2019/01/31 19:39:37 by swoman            #+#    #+#             */
+/*   Updated: 2019/01/31 21:55:42 by swoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,50 +20,41 @@ void	putchar_converted(int n)
 	ft_putchar(c);
 }
 
-int		last_num(int x, int y)
+int		divmod(int x, int y)
 {
-	int z;
-
-	z = 3;
-	while (z <= 9)
+	putchar_converted(x / 10);
+	putchar_converted(x % 10);
+	ft_putchar(' ');
+	putchar_converted(y / 10);
+	putchar_converted(y % 10);
+	if (((x / 10 != 9) || (y % 10 != 8)) && (x < 98))
 	{
-		if (x < y && y < z && x != z)
-		{
-			ft_putchar(',');
-			ft_putchar(' ');
-			putchar_converted(x);
-			putchar_converted(y);
-			putchar_converted(z);
-			z++;
-		}
-		else
-		{
-			z++;
-		}
+		ft_putchar(',');
+		ft_putchar(' ');
 	}
-	return (z);
+	else if (x >= 90 && x < 98)
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
+	return (x);
 }
 
-void	ft_print_comb(void)
+void	ft_print_comb2(void)
 {
 	int x;
 	int y;
-	int z;
 
 	x = 0;
-	y = 1;
-	ft_putchar('0');
-	ft_putchar('1');
-	ft_putchar('2');
-	while (x <= 7)
+	y = 0;
+	while (x <= 99)
 	{
-		while (y <= 8)
+		y = x + 1;
+		while (y <= 99)
 		{
-			last_num(x, y);
-			z = 0;
-			y++;
+			divmod(x, y);
+			y = y + 1;
 		}
-		y = 0;
-		x++;
+		x = x + 1;
 	}
 }

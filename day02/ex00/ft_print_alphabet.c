@@ -6,7 +6,7 @@
 /*   By: swoman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 12:18:35 by swoman            #+#    #+#             */
-/*   Updated: 2019/01/31 14:04:44 by swoman           ###   ########.fr       */
+/*   Updated: 2019/01/31 22:11:45 by swoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	ft_print_alphabet(void)
 		ft_putchar(letter);
 		letter++;
 	}
-	ft_putchar('\n');
 }
