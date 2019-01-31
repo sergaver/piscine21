@@ -1,0 +1,7 @@
+Credentials cache: API:8441
+        Principal: swoman@21-SCHOOL.RU
+
+  Issued                Expires               Principal
+Jan 29 11:19:00 2019  Jan 29 21:19:00 2019  krbtgt/21-SCHOOL.RU@21-SCHOOL.RU
+Jan 29 11:19:01 2019  Jan 29 21:19:00 2019  ldap/ldap-master.21-school.ru@21-SCHOOL.RU
+Jan 29 11:19:01 2019  Jan 29 21:19:00 2019  HTTP/storage-student.21-school.ru@21-SCHOOL.RU
