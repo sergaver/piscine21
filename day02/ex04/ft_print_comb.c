@@ -6,16 +6,11 @@
 /*   By: swoman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 16:01:02 by swoman            #+#    #+#             */
-/*   Updated: 2019/01/31 18:30:15 by swoman           ###   ########.fr       */
+/*   Updated: 2019/01/31 18:49:23 by swoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	putchar_converted(int n)
 {
@@ -72,10 +67,4 @@ void	ft_print_comb(void)
 		x++;
 	}
 	ft_putchar('\n');
-}
-
-int		main(void)
-{
-	ft_print_comb();
-	return (0);
 }
