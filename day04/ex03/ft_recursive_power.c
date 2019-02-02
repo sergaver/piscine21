@@ -6,12 +6,16 @@
 /*   By: swoman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 16:35:20 by swoman            #+#    #+#             */
-/*   Updated: 2019/02/02 17:06:25 by swoman           ###   ########.fr       */
+/*   Updated: 2019/02/02 21:22:43 by swoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_recursive_power(int nb, int power)
 {
+	if (power < 0 || nb == 0)
+	{
+		return (0);
+	}
 	if (power == 0)
 	{
 		return (1);
