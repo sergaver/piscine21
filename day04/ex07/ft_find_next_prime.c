@@ -1,29 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swoman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/31 22:36:50 by swoman            #+#    #+#             */
-/*   Updated: 2019/01/31 22:42:38 by swoman           ###   ########.fr       */
+/*   Created: 2019/02/02 20:07:12 by swoman            #+#    #+#             */
+/*   Updated: 2019/02/02 23:38:25 by swoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	ft_putnbr(int nb)
+int		ft_is_prime(int nb)
 {
-	if (nb < 0)
+	int delitel;
+
+	if (nb <= 1)
 	{
-		ft_putchar('-');
-		nb *= -1;
+		return (0);
 	}
-	if (nb > 9)
+	delitel = nb - 1;
+	while (1)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10):
+		if (delitel == 1)
+		{
+			return (1);
+		}
+		if ((nb % delitel) == 0)
+		{
+			return (0);
+		}
+		delitel--;
 	}
-	else
-		ft_putchar(nb + '0');
+}
+
+int		ft_find_next_prime(int nb)
+{
+	int next_p;
+
+	next_p = nb;
+	if (ft_is_prime(nb) != 1)
+	{
+		while (ft_is_prime(nb) < 1)
+		{
+			nb++;
+		}
+		return (nb);
+	}
+	return (0);
 }
