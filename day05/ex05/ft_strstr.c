@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swoman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/04 14:18:25 by swoman            #+#    #+#             */
-/*   Updated: 2019/02/05 17:16:51 by swoman           ###   ########.fr       */
+/*   Created: 2019/02/05 12:52:26 by swoman            #+#    #+#             */
+/*   Updated: 2019/02/05 19:58:23 by swoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int number;
-	int sign;
+	int i;
+	int j;
+	int size;
 
-	number = 0;
-	sign = 1;
-	while (*str == '\t' || *str == '\v' || *str == '\b' || *str == '+' ||
-			*str == '\n' || *str == '\r' || *str == '\f' || *str == ' ')
-		str++;
-	if (*str == '-' || *str == '+')
+	i = 0;
+	j = 0;
+	size = 0;
+	while (to_find[size] != '\0')
 	{
-		if (*str == '-')
-		{
-			sign = -1;
-		}
-		str++;
+		size++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (str[i] != '\0')
 	{
-		number = number * 10 + (*str - '0');
-		str++;
+		while (to_find[j] == str[j + i])
+			j++;
+		if (j == size)
+			return (str + i);
+		i++;
 	}
-	number *= sign;
-	return (number);
+	return (NULL);
 }

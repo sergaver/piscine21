@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swoman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/04 15:43:41 by swoman            #+#    #+#             */
-/*   Updated: 2019/02/04 18:53:32 by swoman           ###   ########.fr       */
+/*   Created: 2019/02/05 21:06:25 by swoman            #+#    #+#             */
+/*   Updated: 2019/02/05 21:20:50 by swoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strlowcase(char *str)
 {
-	char *res;
+	int i;
 
-	res = dest;
-	while (*src)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		*dest++ = *src++;
+		if (str[i] >= 65 && str[i] <= 90)
+			str[i] += 32;
+		i++;
 	}
-	*dest = '\0';
-	return (res);
+	return (str);
 }

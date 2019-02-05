@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swoman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/04 14:18:25 by swoman            #+#    #+#             */
-/*   Updated: 2019/02/05 17:16:51 by swoman           ###   ########.fr       */
+/*   Created: 2019/02/05 22:52:10 by swoman            #+#    #+#             */
+/*   Updated: 2019/02/05 22:54:09 by swoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
-	int number;
-	int sign;
-
-	number = 0;
-	sign = 1;
-	while (*str == '\t' || *str == '\v' || *str == '\b' || *str == '+' ||
-			*str == '\n' || *str == '\r' || *str == '\f' || *str == ' ')
-		str++;
-	if (*str == '-' || *str == '+')
+	while (*dest)
 	{
-		if (*str == '-')
-		{
-			sign = -1;
-		}
-		str++;
+		dest++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*src)
 	{
-		number = number * 10 + (*str - '0');
-		str++;
+		*dest = *src;
+		dest++;
+		src++;
 	}
-	number *= sign;
-	return (number);
+	*dest = '\0';
+	return (dest);
 }

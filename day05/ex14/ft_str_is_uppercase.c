@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: swoman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/04 15:43:41 by swoman            #+#    #+#             */
-/*   Updated: 2019/02/04 18:53:32 by swoman           ###   ########.fr       */
+/*   Created: 2019/02/05 22:44:06 by swoman            #+#    #+#             */
+/*   Updated: 2019/02/05 22:47:43 by swoman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int		ft_str_is_uppercase(char *str)
 {
-	char *res;
+	int i;
 
-	res = dest;
-	while (*src)
+	i = 0;
+	while (str[i])
 	{
-		*dest++ = *src++;
+		if ((str[i] < 65) || (str[i] > 90))
+			return (0);
+		i++;
 	}
-	*dest = '\0';
-	return (res);
+	return (1);
 }
