@@ -1,2 +1,2 @@
 # piscine21
-me tryna pass  tests in da school21
+trying to pass tests at school 42
